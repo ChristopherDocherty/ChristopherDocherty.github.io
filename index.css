@@ -1,0 +1,798 @@
+html {
+    font-size: 50px;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --root-pos: -350px;
+    --width-save: 1vw;
+
+    --coffee-top: 2610.0;
+    --beta: calc((4024.0) / 3936.0);
+    --gamma: calc( (var(--coffee-top)) / (4024.0) );
+
+    --top-constant: calc(var(--beta) * var(--gamma));
+    --view-width: calc(var(--top-constant) * 100vw);
+
+}
+
+
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+}
+
+body::-webkit-scrollbar {
+    display:none;
+}
+
+
+
+
+.background-pic {
+    position: relative;
+    top: var(--root-pos);
+    height: auto;
+    max-width: 100%;
+}
+
+
+
+.wave {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0);
+
+    border: 2px solid;
+    border-color: rgba(255, 255, 255, 0);
+
+    height: 11.7vw;
+    width: 11.7vw;
+
+    top: calc(var(--view-width) + var(--root-pos));
+    left: 49.3vw;
+
+    z-index: 10;
+    transform: translate(-50%,-50%);
+
+
+    animation: wave 1.5s; 
+    animation-delay: 0.5s;
+
+}
+
+.wave:hover {
+    cursor: pointer;
+}
+
+@keyframes wave {
+
+    0% {
+        height: 0px;
+        width: 0px;
+        border-color: rgba(256,256,256,100);
+
+    }
+
+    100% {
+        height: 11.7vw;
+        width: 11.7vw;
+        border-color: rgba(0,0,0,0);
+    }
+}
+
+
+
+.wave2 {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0);
+
+    border: 2px solid;
+    border-color: rgba(255, 255, 255, 0);
+
+    height: 0vw;
+    width: 0vw;
+
+    top: calc(var(--view-width) + var(--root-pos));
+    left: 49.3vw;
+
+    z-index: 10;
+    transform: translate(-50%,-50%);
+
+    animation: wave2 1.5s forwards;
+    animation-delay: 0.5s;
+}
+
+.wave2:hover {
+    cursor: pointer;
+}
+
+
+@keyframes wave2 {
+
+    0% {
+        border-color: rgba(256,256,256,0.0);
+        
+    }
+
+    18% {
+        border-color: rgba(256,256,256,0.0);
+
+    }
+
+    20% {
+        display: block;
+        height: 0px;
+        width: 0px;
+        border-color: rgba(256,256,256,0.75);
+
+    }
+
+
+    100% {
+        height: 9.36vw;
+        width: 9.36vw;
+        border-color: rgba(256,256,256,0);
+    }
+}
+
+
+.scroll-arrow {
+    position: absolute;
+    
+    top: calc(var(--view-width) + var(--root-pos) + 11vw);
+    left: 49.3vw;
+    height: 5vw;
+    width: 5vw;
+    
+    
+    color: #000000c9;
+
+
+
+    z-index: 2;
+    transform: translate(-50%,-50%);
+
+    animation: scroll-bounce ease-out 5s infinite;
+    animation-delay: 3s;
+
+}
+
+.scroll-arrow:hover {
+    cursor: pointer;
+}
+
+
+
+
+@keyframes scroll-bounce {
+
+    0% {
+        transform: translate(-50%,-50%);
+    }
+
+    5% {
+        transform: translate(-50%,-40%)
+    }
+
+    13% {
+        transform: translate(-50%,-50%);
+
+    }
+
+}
+
+
+
+
+
+.whole {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.name {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    font-size:1.5rem;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    white-space: nowrap; /*for line break*/
+}
+
+
+.container {
+    position: relative;
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+    z-index: 0;
+}
+
+
+
+
+.formatting-div {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: var(--root-pos);
+    width: 100%;
+    margin:0px;
+}
+
+.sep-1 {
+    height:60vw;
+    width: 5%;
+}
+
+.sep-2 {
+    height:17vw;
+    width: 5%;
+}
+
+.headers {
+    display: flex;
+    justify-content: space-between;
+    width: 64vw;
+    
+}
+
+
+.header-1 {
+    font-size: 1rem;    
+    transform: translate(-50%, 0);
+    outline: 0.7mm dashed #959597;
+    padding: 1px 5px;
+
+}
+
+.header-1:hover {
+    cursor: pointer;
+}
+
+
+
+.header-2 {
+    font-size: 1rem;
+    transform: translate(+50%, 0%);
+    outline: 0.7mm dashed #959597;
+    padding: 1px 5px;
+}
+
+.header-2:hover {
+    cursor: pointer;
+}
+
+
+
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.content {
+    left: 5vw;
+    width: 90vw;
+    background-color: #E2E2E2;
+    border-radius: 15px;
+    margin: 0px 0px 30px 0px;
+}
+
+
+.section-title {
+    font-size: 0.8rem;
+    margin: 10px 0px 0px 0px;
+}
+
+.under-title {
+    color: #696767;
+    width: 100px;
+    margin:auto;
+}
+
+
+
+.section-sep {
+    color: #696767;
+    width: 95%;
+    margin:auto;
+}
+
+/*card related css */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow:auto;
+}
+
+
+.card-focused {
+    position: absolute;
+    top:0px;
+    left:0px;
+    
+    width: 298px;
+    height: 418px;
+    background: linear-gradient(251.9deg, #39DDB6 16.96%, #39D3DD 76.79%);
+
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 100;
+
+    
+    transform: translate(-50%,0);
+
+    font-size: 18px;
+    animation: fullscreen 0.5s forwards;
+
+}
+
+@keyframes fullscreen {
+    
+    0% {
+    } 
+
+    100% {
+        top:5vh;
+        left: 50vw;
+        
+        width:calc(80vh / 1.402 );
+        height: 80vh; 
+        font-size: 50%;
+    }
+}
+
+@media screen and (max-width: 1050px)  {
+
+    @keyframes fullscreen {
+    
+        0% {
+        } 
+    
+        100% {
+            top:10vh;
+            left: 50vw;
+            
+            width:calc(80vh / 1.402 );
+            height: 80vh; 
+            font-size: 85%;
+
+        }
+    }
+    
+}
+
+
+
+
+
+.card {
+    position: relative;
+    width: 298px;
+    height: 418px;
+    background: linear-gradient(251.9deg, #39DDB6 16.96%, #39D3DD 76.79%);
+
+    margin: 15px;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation: card-animation-back 0.2s ease-in forwards;
+    transform: translateZ(0);
+
+    font-size: 18px;
+}
+
+
+.card:hover {
+    transform: translateZ(0);
+    animation: card-animation-for 0.2s ease-in forwards;
+    cursor: pointer;
+}
+
+@keyframes card-animation-for {
+    0% {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    100% {
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.35);
+    transform: translateY(-5px);
+    }
+}
+
+
+@keyframes card-animation-back {
+    0% {
+    transform: translateY(-5px);
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.35);
+    }
+
+    100% {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+}
+
+
+.card-image {
+    position: absolute;
+    top:0px;
+    left: 0px;
+
+    width: 100%;
+
+    border-radius: 10px 10px 0px 0px;
+}
+
+
+
+.language-notch-cpp {
+    position: relative;
+    display: flex;
+    align-items: center;
+    top: 20px;
+    left: 20px;
+    background-color:white;
+    border-radius: 7px;
+    width: 64px;
+}
+
+.circle-cpp {
+    border-radius: 50%;
+    background-color: #F130B0;
+    width: 15px;
+    height: 15px;
+    margin: 5px 3px 5px 5px;
+}
+
+.language-notch-py {
+    position: relative;
+    display: flex;
+    align-items: center;
+    top: 20px;
+    left: 20px;
+    background-color:white;
+    border-radius: 7px;
+    width: 80px;
+}
+
+.circle-py {
+    border-radius: 50%;
+    background-color: rgb(48, 51, 241);
+    width: 15px;
+    height: 15px;
+    margin: 5px 3px 5px 5px;
+}
+
+
+.circle-lua {
+    border-radius: 50%;
+    background-color: rgb(1, 3, 167);
+    width: 15px;
+    height: 15px;
+    margin: 5px 3px 5px 5px;
+}
+
+
+
+.language-name {
+    margin: 5px 10px 5px 7px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #696767;
+}
+
+
+.card-name {
+    position: absolute;
+    top: 53.9%;
+    width: 100%;
+    height: 8.4%;
+
+    background: rgba(255, 255, 255, 0.68);
+
+    font-family: Roboto;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2em;
+    margin: 0px;
+
+    color: #363636;
+}
+
+.card-info {
+    position: absolute;
+    top:62.2%;
+
+    width: 100%;
+    height: 37.8%;
+
+    background: rgba(202, 197, 197, 0.78);
+    border-radius: 0px 0px 10px 10px;
+
+}
+
+
+.card-info-text {
+    text-align: justify;
+    font-family: Roboto;
+    font-size: .70em;
+    line-height: 1.2em;
+
+    color: #383838;
+
+    margin: 12px 20px 10px 20px;
+}
+
+
+/* modal css */
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+.card-source {
+    position: absolute;
+    top: 97%;
+    left: 87%; 
+    transform: translate(-50%,-50%);
+    font-size: 15px;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+a {
+    color: #383838;
+    text-decoration: none;
+}
+
+
+
+/* contact css */
+
+
+.contact-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+}
+
+.contact-bar:hover {
+    cursor: default;
+}
+
+.email-holder {
+    height: 25px;
+    font-size: 18px;
+    margin: 0px 0px 0px 0px;
+}
+
+.email {
+    line-height: normal;
+}
+
+
+
+
+.email:hover {
+    cursor: pointer;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+}
+
+
+.extra-content {
+    display: flex;
+    justify-content: center;
+    color: #383838;
+}
+
+
+
+.icon {
+    width: 20px;
+    margin: 0px;
+}
+
+
+#email {
+    transform: translateY(6px);
+    color: rgb(39, 161, 170);
+    width: 20px;
+    margin-bottom: 2px;
+}
+
+#linkedin {
+    color: #2867B2;
+}
+
+#linkedin:hover {
+    cursor: pointer;
+}
+
+#github {
+    color: #383838;
+}
+
+#github:hover {
+    cursor: pointer;
+}
+
+
+.links {
+    margin:10px;
+    font-size: 16px;
+}
+
+.links:hover {
+    cursor: pointer;
+}
+
+
+/*Repsonsive bit*/
+
+@media screen and (min-width: 1800px) {
+    
+    .sep-2 {
+        height: 22vw;
+    }
+
+    html {
+        font-size: 50;
+    }
+
+}
+
+
+@media screen and (max-width: 900px) {
+    :root {
+        --root-pos: 0px;
+    }
+
+    html {
+        font-size: 34px;
+    }
+
+    .name {
+        top: 100px;
+    }
+
+}
+
+
+
+@media screen and (max-width: 500px) {
+
+    html {
+        font-size: 20px;
+    }
+
+    .name {
+        top: 75px;
+    }
+
+    .sep-1 {
+        height: 55vw;
+    }
+
+    .sep-2 {
+        height: 20vw;
+    }
+}
+
+@media screen and (max-width: 342px) {
+
+    .content {
+        width: 97vw;
+    }
+
+}
+
+
+
+/*
+
+get cards for each project DONE
+put contact info at the bottom DONE
+
+Put in some skills section
+Put in short about me under name - very short
+
+Work out how to display more in depth info about projects DONE
+implement modal explanation DONE(ish)
+
+animations:
+    card:hover - jump out a bit DONE
+ >> Add js to only dad reverse animation once it has been hovered over once
+    Drop in coffee!!  DONE!
+        touch to get another drop! DONE!
+    scroll arrow that bounces or otherwise moves DONE!
+    
+    Arrows to automatically scroll screen down DONE!
+        -Cross platform solution safari...
+    
+    
+    Have transition from card to fixed sectoin that takes up most of the page
+    
+add animations for entry of cards etc.
+
+
+Copy email to clipboard DONE!
+    Tool tip to say
+
+
+//PUT REAL INFO IN
+//ADD PICTURES --DONE!
+//WORK ON TRANSITION TO MODAL
+    Plan is to use js to get position of card 
+    then stop scrolling somehow
+    now switch display on for a copy of the card with the video now instead of the picture
+    switch off original card display
+    enlarge card and center it using css transitions for smoothness
+    time js with transition lenght to start video PERHAPS
+    Have scroll work on modal/card thing
+//ABOUT ME SECTION
+
+
+Dont need transition for mobile, need for tablet, 
+tablet headers messed up
+take hover animation off for any screen size which has touch
+contact details messed up on small phone sizes
+animaiton might need to be on hover for touch devices
+Need github link for each project in mobile version if not expaninding
+
+MOBILE
+
+Modal not wisthstanding its mostly a case of font sizes and contact getting messed up on smallest
+screen size
+
+
+
+If the card size is constant then just have translate 5050 in second
+class and implement js for it
+*/
