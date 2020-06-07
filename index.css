@@ -766,9 +766,9 @@ Copy email to clipboard DONE!
     Tool tip to say
 
 
-//PUT REAL INFO IN
+//PUT REAL INFO IN DONE!(ish)
 //ADD PICTURES --DONE!
-//WORK ON TRANSITION TO MODAL
+//WORK ON TRANSITION TO MODAL DONE!
     Plan is to use js to get position of card 
     then stop scrolling somehow
     now switch display on for a copy of the card with the video now instead of the picture
@@ -795,4 +795,8 @@ screen size
 
 If the card size is constant then just have translate 5050 in second
 class and implement js for it
+
+chrome videos not working
+
+edge card transitions broken
 */
