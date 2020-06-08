@@ -13,6 +13,7 @@ html {
 
     --top-constant: calc(var(--beta) * var(--gamma));
     --view-width: calc(var(--top-constant) * 100vw);
+    --card-width: calc(80vh * 0.7133);
 
 }
 
@@ -22,6 +23,7 @@ html {
 body {
     font-family: 'Roboto', sans-serif;
     background-color: black;
+    -ms-overflow-style: none;
 }
 
 body::-webkit-scrollbar {
@@ -333,8 +335,8 @@ body::-webkit-scrollbar {
     top:0px;
     left:0px;
     
-    width: 298px;
-    height: 418px;
+    width: var(--card-width);
+    height: 80vh; 
     background: linear-gradient(251.9deg, #39DDB6 16.96%, #39D3DD 76.79%);
 
 
@@ -354,13 +356,15 @@ body::-webkit-scrollbar {
 @keyframes fullscreen {
     
     0% {
+        width: 298px;
+        height: 418px;
     } 
 
     100% {
         top:5vh;
         left: 50vw;
         
-        width:calc(80vh / 1.402 );
+        width: var(--card-width);
         height: 80vh; 
         font-size: 50%;
     }
@@ -377,7 +381,7 @@ body::-webkit-scrollbar {
             top:10vh;
             left: 50vw;
             
-            width:calc(80vh / 1.402 );
+            width: var(--card-width);
             height: 80vh; 
             font-size: 85%;
 
