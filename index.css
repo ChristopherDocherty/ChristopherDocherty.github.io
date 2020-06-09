@@ -611,6 +611,7 @@ a {
     height: 25px;
     font-size: 18px;
     margin: 0px 0px 0px 0px;
+    overflow: none;
 }
 
 .email {
@@ -727,7 +728,43 @@ a {
     .sep-2 {
         height: 20vw;
     }
+
+    #email {
+        width: 18px;
+    }
+
+    .email-holder {
+        margin-bottom: 15px;
+        font-size: 15px;
+    }
+
+    .links {
+        font-size: 15px;
+    }
+
+
+
 }
+
+@media screen and (max-width: 370px) {
+    .card {
+        position: relative;
+        width: 270px;
+        height: 418px;
+    }
+
+    .card-name {
+        top: 48.7%;
+
+    }
+
+    .card-info {
+        top: 57.2%;
+        height: 43%;
+    }
+
+}
+
 
 @media screen and (max-width: 342px) {
 
