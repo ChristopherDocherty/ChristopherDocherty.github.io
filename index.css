@@ -32,15 +32,18 @@ body::-webkit-scrollbar {
 
 
 
-
+/*
 .background-pic {
     position: relative;
     top: var(--root-pos);
     height: auto;
     max-width: 100%;
 }
+*/
 
-
+.hide {
+    display: none;
+}
 
 .wave {
     position: absolute;

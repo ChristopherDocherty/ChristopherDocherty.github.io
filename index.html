@@ -7,7 +7,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
-    <link rel="preload" href="media/newpic.jpg" as="image">
+    <link rel="preload" href="media/newpic_smaller.jpg" as="image">
 
     <meta content="width=device-width, initial-scale=1" name="viewport" />
 </head>
@@ -18,12 +18,18 @@
     <div class="whole">
         
         <div class="container">
-            <img src="media/newpic.jpg" class="background-pic">
+            <img src="media/newpic_smaller.jpg" 
+            
+            style="
+            position: relative;
+            top: var(--root-pos);
+            height: auto;
+            max-width: 100%;">
 
             <!--Animations-->
 
-            <div id="wave" class="wave"></div>
-            <div id="wave2" class="wave2"></div>
+            <div id="wave" className="hide"></div>
+            <div id="wave2" className="hide"></div>
             
             <svg 
                 aria-hidden="true" 

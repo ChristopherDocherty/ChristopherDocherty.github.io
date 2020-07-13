@@ -95,6 +95,13 @@ window.onclick = function(event) {
 var wave1 = document.getElementById("wave");
 var wave2 = document.getElementById("wave2");
 
+//New window on-load to improve coffee animation
+window.onload = function () {
+    wave1.className = "wave";
+    wave2.className = "wave2";
+}
+
+
 var waves_onclick = function () {
 
     if(wave2.offsetWidth > 76) {
